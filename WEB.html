@@ -1,0 +1,75 @@
+<html >
+
+<head> <title>RecommendationSystem</title>
+
+<style>
+
+body {background-color:B0C4DE}
+
+#header {width:1300; margin-left:20px; margin-right:100px;  background-color:708090; border-radius:5%}
+#header h1 {color:white; line-height:200px; text-align:center; font-size:70;}
+#header h2{text-align:center; border-bottom:2px solid #e67e22; border-top:2px solid #e67e22; color:white;}
+
+
+
+
+
+
+#search{text-align:center;
+        border:solid;
+        background:C0C0C0; 
+        color:black; 
+        padding:10px}
+
+
+
+
+</style>
+
+
+</head>
+
+<body>
+<div id="header">
+
+     
+        <h1>Search Movies<h1>
+       <h2> Movie Marathon</h2>
+  </div>
+
+
+<div id="search">
+      
+     <form action="http://127.0.0.1:5000/movie" method="POST">
+     
+    <p id="text"><b>Enter Movie Name </b>
+    <input type="text" name="Name" size="30" maxlength="50"   /> </p>
+    <button type="submit"> Search </button>
+
+   </form>
+  </div>
+
+<div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">{{catagory}}</p>
+                </div>
+            </div>
+        </div>
+
+        {% for s in suggestions %}
+        <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{s[0]}}</h5>
+                    <p class="card-text">{{s[1]}}</p>
+                </div>
+        </div>
+        {%endfor%}
+
+ 
+ 
+
+</body>
+
+</html>
